@@ -1,20 +1,17 @@
-import react from 'react';
-import ReactDOM from 'react-dom';
+import React from'react';
+import ReactDOM from'react-dom';
+
+const firstName = "Utkarsh Singh Chouhan";
 
 
+// JS in JSX 
 ReactDOM.render(
     <>
-        <h1>Hello World</h1>
-        <h2>
-            <p>My Top Favourite Netflix Series</p>
-            <ol>
-                <li>Dark</li>
-                <li>Extra Curricular</li>
-                <li>Mr. Robot</li>
-            </ol>
-        </h2>
+        <h1>My name is : {firstName}</h1>
+
+
+        <h1>My age is : 2023 - 1999</h1>
+        <h1>My age is : {2023 - 1999}</h1>
     </>,
     document.getElementById("root")
 );
-
-
