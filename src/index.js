@@ -2,9 +2,29 @@ import React  from 'react';
 import ReactDOM  from 'react-dom';
 
 
-ReactDOM.render(<h1>Hello World!!</h1>, document.getElementById("root"));
+// ADDING MUTIPLE JSX ELEMENT INSIDE THE render() function
 
-// pure Javascript
-var h1 = document.createElement("h1");
-h1.innerHTML = "Utkarsh Singh Chouhan";
-document.getElementById("root").appendChild(h1);
+
+// In React v-16 it is possile for the render() function
+//  to return an array of elements
+
+// ReactDOM.render(
+//     [
+//         <h1>Hello World!!</h1>, 
+//         <h1>Hello World!!</h1>, 
+//         <h1>Hello World!!</h1>
+//     ],
+//     document.getElementById("root")
+// );
+
+//  OR we can simple put the multiple elements inside the div tag
+
+ReactDOM.render(
+   <div>
+    <h1>Hello World!!</h1>
+    <h1>Hello World!!</h1>
+    <h1>Hello World!!</h1>
+   </div>,
+    document.getElementById("root")
+);
+
