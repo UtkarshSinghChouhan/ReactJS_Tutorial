@@ -1,28 +1,23 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.css';
 
-const name = "Utkarsh Singh Chouhan";
 
-const img1 = "https://picsum.photos/200/300";
-const img2 = "https://picsum.photos/250/300";
-const img3 = "https://picsum.photos/300/300";
+const heading = {
+    color:"#fa9191",
+    textAlign:"center",
+    textTransform:"capitalize",
+    fontFamily: 'Roboto'
+}
 
-const link = "https://in.pinterest.com/";
+const name = "Utkarsh Singh Chouhan"
 
 ReactDOM.render(
     <>
-        <h1 className='heading'>{name}</h1>
-
-        <div className='img_div'>
-            <img src={img1}/>
-            <img src={img2}/>
-
-            <a href={link} target="_blank">
-                <img src={img3}/>
-            </a>
-
-        </div>
+        <h1 style={heading}>{name}</h1>
+        
+        <p style={{color:"#fa9191", textAlign:"center", textTransform:"capitalize", fontFamily: 'Roboto'}}>
+            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi saepe libero quia unde, voluptatibus impedit enim dicta temporibus velit perferendis!
+        </p>
     </>,
     document.getElementById("root")
 );
