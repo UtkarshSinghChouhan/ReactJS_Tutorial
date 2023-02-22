@@ -1,23 +1,33 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import './index.css'
 
+// For changing the style of the span dynamically
+let cssStyle = {
 
-const heading = {
-    color:"#fa9191",
-    textAlign:"center",
-    textTransform:"capitalize",
-    fontFamily: 'Roboto'
+};
+
+let greeting = "";
+
+let currDate = new Date();
+currDate = currDate.getHours();
+
+if(currDate >= 1 && currDate < 12){
+    greeting = "Good Morning";
+    cssStyle.color = "Green";
+}else if(currDate >= 12 && currDate < 19){
+    greeting = "Good AfterNoon";
+    cssStyle.color = "Orange";
+}else{
+    greeting = "Good Night"
+    cssStyle.color = "DarkBlue";
 }
-
-const name = "Utkarsh Singh Chouhan"
 
 ReactDOM.render(
     <>
-        <h1 style={heading}>{name}</h1>
-        
-        <p style={{color:"#fa9191", textAlign:"center", textTransform:"capitalize", fontFamily: 'Roboto'}}>
-            Lorem ipsum dolor sit amet consectetur, adipisicing elit. Sequi saepe libero quia unde, voluptatibus impedit enim dicta temporibus velit perferendis!
-        </p>
+        <div>
+            <h1>Hello Sir, <span style={cssStyle}> {greeting} </span></h1>
+        </div>
     </>,
     document.getElementById("root")
 );
