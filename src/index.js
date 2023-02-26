@@ -1,32 +1,15 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-// import firstName, {lastName, favProgram, favLanguage} from './App';
-
-
-// ReactDOM.render(
-//     <>
-//         <ol>
-//             <li>{firstName}</li>
-//             <li>{lastName()}</li>
-//             <li>{favProgram()}</li>
-//             <li>{favLanguage}</li>
-//         </ol>
-//     </>,
-//     document.getElementById("root")
-// );
-
-
-// We can also import everything as an object
 import * as obj from './App';
 
 ReactDOM.render(
     <>
-        <ol>
-            <li>{obj.default}</li>
-            <li>{obj.lastName()}</li>
-            <li>{obj.favProgram()}</li>
-            <li>{obj.favLanguage}</li>
-        </ol>
+        <ul>
+            <li>Sum of two numbers is {obj.sum(1, 2)}</li>
+            <li>Subtraction of two numbers is {obj.subtract(3, 4)}</li>
+            <li>Multiplication of two numbers is {obj.multiply(3, 4)}</li>
+            <li>Division of two numbers is {obj.division(4, 2)}</li>
+        </ul>
     </>,
     document.getElementById("root")
 );

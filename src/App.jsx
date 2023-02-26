@@ -1,18 +1,24 @@
 import React from 'react';
 
-const name = "Utkarsh";
-
-function lastName(){
-    const Lname = "Singh Chouhan";
-    return Lname;
+function sum(a, b){
+    let sol = a+b;
+    return sol;
 }
 
-const favLanguage = "React";
-
-function favProgram(){
-    const lan = "C++";
-    return lan;
+function multiply(a, b){
+    let product = a*b;
+    return product;
 }
 
-export default name;
-export {lastName, favLanguage, favProgram};
+function division(a, b){
+    let res = a/b;
+    return res;
+}
+
+function subtract(a, b){
+    let sub = a-b;
+    return sub;
+}
+
+export {sum, subtract, multiply, division};
+
