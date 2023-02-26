@@ -1,14 +1,18 @@
 import React from 'react';
-import * as obj from './Calc';
+import Card from './Cards';
+
 
 function App(){
     return(
-        <ul>
-        <li>Sum of two numbers is {obj.sum(1, 2)}</li>
-        <li>Subtraction of two numbers is {obj.subtract(3, 4)}</li>
-        <li>Multiplication of two numbers is {obj.multiply(3, 4)}</li>
-        <li>Division of two numbers is {obj.division(13, 3)}</li>
-    </ul>
+        <>
+            <Card imgsrc="https://i.pinimg.com/564x/02/f6/9c/02f69ce21ff6686ff567aecbc119ce60.jpg"
+                title="DARK"/>
+            <Card imgsrc="https://i.pinimg.com/564x/6f/9a/14/6f9a148b57eb3e1723d2091860ef5cc2.jpg"
+                title="STRANGER THINGS"/>
+            <Card imgsrc="https://i.pinimg.com/564x/bb/f9/4b/bbf94b8f7e8cbdbf2c4e9a5b92ea0790.jpg"
+                title="BLACK MIRROR"/>
+
+        </>        
     );
 }
 
