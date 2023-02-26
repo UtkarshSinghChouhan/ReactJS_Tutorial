@@ -12,6 +12,8 @@ function multiply(a, b){
 
 function division(a, b){
     let res = a/b;
+    // for showing only upto two decimal places
+    res = res.toFixed(2);
     return res;
 }
 
