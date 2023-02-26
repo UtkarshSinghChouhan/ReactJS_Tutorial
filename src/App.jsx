@@ -1,26 +1,15 @@
 import React from 'react';
+import * as obj from './Calc';
 
-function sum(a, b){
-    let sol = a+b;
-    return sol;
+function App(){
+    return(
+        <ul>
+        <li>Sum of two numbers is {obj.sum(1, 2)}</li>
+        <li>Subtraction of two numbers is {obj.subtract(3, 4)}</li>
+        <li>Multiplication of two numbers is {obj.multiply(3, 4)}</li>
+        <li>Division of two numbers is {obj.division(13, 3)}</li>
+    </ul>
+    );
 }
 
-function multiply(a, b){
-    let product = a*b;
-    return product;
-}
-
-function division(a, b){
-    let res = a/b;
-    // for showing only upto two decimal places
-    res = res.toFixed(2);
-    return res;
-}
-
-function subtract(a, b){
-    let sub = a-b;
-    return sub;
-}
-
-export {sum, subtract, multiply, division};
-
+export default App;
