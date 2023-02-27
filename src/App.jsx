@@ -1,16 +1,24 @@
 import React from 'react';
 import Card from './Cards';
+import Header from './Header';
+import CardData from './Data';
 
 
 function App(){
     return(
         <>
-            <Card imgsrc="https://i.pinimg.com/564x/02/f6/9c/02f69ce21ff6686ff567aecbc119ce60.jpg"
-                title="DARK"/>
-            <Card imgsrc="https://i.pinimg.com/564x/6f/9a/14/6f9a148b57eb3e1723d2091860ef5cc2.jpg"
-                title="STRANGER THINGS"/>
-            <Card imgsrc="https://i.pinimg.com/564x/bb/f9/4b/bbf94b8f7e8cbdbf2c4e9a5b92ea0790.jpg"
-                title="BLACK MIRROR"/>
+            <Header />
+
+            <div className='container'>
+                
+                <Card imgsrc={CardData[0].imgsrc}
+                    title={CardData[0].title}/>
+                <Card imgsrc={CardData[1].imgsrc}
+                    title={CardData[1].title}/>
+                <Card imgsrc={CardData[2].imgsrc}
+                    title={CardData[2].title}/>
+
+            </div>
 
         </>        
     );
