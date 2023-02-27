@@ -1,4 +1,4 @@
-const CardData = [
+const PropData = [
     {
         imgsrc:"https://i.pinimg.com/564x/02/f6/9c/02f69ce21ff6686ff567aecbc119ce60.jpg",
         title:"DARK"
@@ -15,4 +15,4 @@ const CardData = [
     },
 ];
 
-export default CardData;
+export default PropData;

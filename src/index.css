@@ -13,11 +13,16 @@ body{
     width: 100%;
     height: 100%;
 
-    display: grid;
+    /* display: grid;
     place-items: center;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto auto; */
 
-    padding: 95px 0 0 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    flex-wrap: wrap;
+    height: 643px;
 }
 
 h1{
@@ -29,6 +34,7 @@ h1{
 }
 
 .card{
+    padding: 95px 0 0 0;
     background-color: white;
     display: flex;
     flex-direction: column;
