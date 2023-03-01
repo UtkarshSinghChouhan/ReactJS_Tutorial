@@ -1,26 +1,25 @@
-import React, { useState } from 'react';
-
-
- 
+import React, {useState} from 'react';
 
 const App = () => {
-    let [time, setTime] = useState(new Date().toLocaleTimeString());
+    let [bgColor, setColor] = useState('salmon');
 
-    let date = new Date().toDateString();
+    const changeColor = () => {
+        bgColor = 'gray';
+        setColor(bgColor);
+    };
 
-    setInterval(() => {
-        setTime(new Date().toLocaleTimeString());
-    }, 1000);
+    const changeNewColor = () => {
+        bgColor = 'salmon';
+        setColor(bgColor);
+    }
 
     return(
         <>
-        <div className='container'>
-            <h1 className='heading'> {time} </h1>
-            <h1 className='heading'> {date} </h1>
-        </div>
-            
+            <div className='container' style={{backgroundColor:bgColor}}>
+                <button onClick={changeColor} onDoubleClick={changeNewColor}>Click Me</button>
+            </div>
         </>
-    )
+    );
 }
 
 export default App;
