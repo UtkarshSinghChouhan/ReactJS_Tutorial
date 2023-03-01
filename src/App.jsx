@@ -1,29 +1,18 @@
-import React from 'react';
-import Card from './Cards';
-import Header from './Header';
-import PropData from './Data';
+ import React from 'react';
+ import SlotMachine from './SlotMachine';
 
 
-function App(){
+
+
+ 
+
+ const App = () => {
     return(
         <>
-            <Header />
+            <h1 className='heading'>Welcome To <span style={{fontWeight : 'bold', backgroundColor:'#d2dbdd'}}>The Slot Machine Game 🎰</span></h1>
+            <SlotMachine />
+        </>
+    )
+ }
 
-            <div className='container'>
-
-                {
-                    PropData.map((val) => {
-                        return(
-                            <Card imgsrc={val.imgsrc}
-                            title={val.title}/>
-                        );
-                    })
-                }
-
-            </div>
-
-        </>        
-    );
-}
-
-export default App;
+ export default App;

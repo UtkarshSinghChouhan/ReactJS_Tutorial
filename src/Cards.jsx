@@ -1,23 +1,26 @@
-import React from 'react';
-import Image from './Image';
-import Title from './Title';
+import React from "react";
 
-function Card(props){
-    return(
-        <>
-            <div className='card'>
-                <Image imgsrc={props.imgsrc}/>
-                
-                <div className='card_info'>
-                    <span className='card_category'> A Netflix Original Series</span>
-                    <Title title={props.title}/>
-                    <a href='' target='_blank'>
-                        <button> Watch Now </button>
-                    </a>
-                </div>
-            </div>
-        </>
-    );
+const Card = (props) => {
+    // let x = props.x, y = props.y, z = props.z;
+
+    let {x, y, z} = props;   //Object Destucturing
+
+    if((x === y) && (y === z)){
+        return(
+            <h1 className='card'>
+                {x} {y} {z}
+                <h6>This is <span style={{fontWeight : 'bold', backgroundColor:'#d2dbdd'}}>Matching</span></h6>
+            </h1>
+        )
+    }else{
+        return(
+            <h1 className='card'>
+                {x} {y} {z}
+                <h6>This is <span style={{fontWeight : 'bold', backgroundColor:'#d2dbdd'}}>Not Matching</span></h6>
+            </h1>
+        )
+
+    }
 }
 
 export default Card;
