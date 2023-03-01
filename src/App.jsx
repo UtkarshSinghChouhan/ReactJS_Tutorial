@@ -4,17 +4,18 @@ import React, { useState } from 'react';
  
 
 const App = () => {
-    const [num, setCount] = useState(0);
+    let [time, setTime] = useState(new Date().toLocaleTimeString());
 
-    const IncNum = () => {
-        setCount(num+1);
+    const updateTime = () => {
+        time = new Date().toLocaleTimeString()
+        setTime(time);
     }
 
     return(
         <>
         <div className='container'>
-            <h1 className='heading'> {num} </h1>
-            <button onClick={IncNum}> click ME</button>
+            <h1 className='heading'> {time} </h1>
+            <button onClick={updateTime}>  GET TIME</button>
         </div>
             
         </>
