@@ -6,16 +6,17 @@ import React, { useState } from 'react';
 const App = () => {
     let [time, setTime] = useState(new Date().toLocaleTimeString());
 
-    const updateTime = () => {
-        time = new Date().toLocaleTimeString()
-        setTime(time);
-    }
+    let date = new Date().toDateString();
+
+    setInterval(() => {
+        setTime(new Date().toLocaleTimeString());
+    }, 1000);
 
     return(
         <>
         <div className='container'>
             <h1 className='heading'> {time} </h1>
-            <button onClick={updateTime}>  GET TIME</button>
+            <h1 className='heading'> {date} </h1>
         </div>
             
         </>
