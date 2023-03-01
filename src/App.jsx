@@ -1,18 +1,24 @@
- import React from 'react';
- import SlotMachine from './SlotMachine';
-
-
+import React, { useState } from 'react';
 
 
  
 
- const App = () => {
+const App = () => {
+    const [num, setCount] = useState(0);
+
+    const IncNum = () => {
+        setCount(num+1);
+    }
+
     return(
         <>
-            <h1 className='heading'>Welcome To <span style={{fontWeight : 'bold', backgroundColor:'#d2dbdd'}}>The Slot Machine Game 🎰</span></h1>
-            <SlotMachine />
+        <div className='container'>
+            <h1 className='heading'> {num} </h1>
+            <button onClick={IncNum}> click ME</button>
+        </div>
+            
         </>
     )
- }
+}
 
- export default App;
+export default App;

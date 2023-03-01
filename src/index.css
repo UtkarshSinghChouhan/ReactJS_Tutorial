@@ -6,7 +6,6 @@
 }
 
 body{
-    background-color:#a4acad;
     background-color:#d2dbdd;
 }
 
@@ -19,51 +18,29 @@ body{
     grid-template-columns: auto auto auto; */
 
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
     height: calc(100vh - 71px);
 }
 
-.heading{
-    text-align: center;
-    background-color: white;
-    padding: 16px 0;
-    box-shadow: 8px 0 10px rgba(0, 0, 0, 0.54);
-    color: rgb(77, 77, 77);
+h1{    
+    font-size: 96px;
+    margin: 0 0 20px 0;
 }
 
-.slot_machine{
-    background-color: white;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    align-items: center;
-    padding: 40px 0;
-    border-radius: 11px;
-    width: 439px;
+button{
+    font-weight: bold;
+    padding: 18px 35px;
+    border-radius: 10px;
     transition: all .2s ease-in-out;
-    border: 4px double #a4acad;;
+    font-size: 25px;
 }
 
-.slot_machine:hover{
-    box-shadow: 15px 15px 17px rgba(0, 0, 0, 0.54);
+button:hover{
     transform: scale(1.2);
+    box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.54);
 }
 
-.card{    
-    background-color: #d2dbdd;
-    width: 320px;
-    transition: all .2s ease-in-out;
-    text-align: center;
-    padding: 12px 0;
-    border-radius: 5px;
-    margin: 10px 0;
-}
-
-.card:hover{
-    box-shadow: 15px 15px 17px rgba(0, 0, 0, 0.54);
-    transform: scale(1.2);
-}
 
