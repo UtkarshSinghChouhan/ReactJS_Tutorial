@@ -5,7 +5,9 @@ const App = () => {
 
     let[fullName, setName] = useState({
         fname : "",
-        lname : ""
+        lname : "",
+        email : "",
+        number : ""
     });
 
     const inputEvent = (e) => {
@@ -15,18 +17,38 @@ const App = () => {
 
 
         setName((previousValue) => {
-            let value = e.target.value;
-            let name = e.target.name;
+            // let value = e.target.value;
+            // let name = e.target.name;
+
+            let{name, value} = e.target;   //object Destructuring
 
             if(name === 'fname'){
                 return{
                     fname : value,
-                    lname : previousValue.lname
+                    lname : previousValue.lname,
+                    email : previousValue.email,
+                    number : previousValue.number
                 }
             }else if(name === 'lname'){
                 return{
                     fname : previousValue.fname,
-                    lname : value
+                    lname : value,
+                    email : previousValue.email,
+                    number : previousValue.number
+                }
+            }else if(name === 'email'){
+                return{
+                    fname : previousValue.fname,
+                    lname : previousValue.lname,
+                    email : value,
+                    number : previousValue.number
+                }
+            }else if(name === 'number'){
+                return{
+                    fname : previousValue.fname,
+                    lname : previousValue.lname,
+                    email : previousValue.email,
+                    number : value
                 }
             }
         })
@@ -44,6 +66,7 @@ const App = () => {
             <div className='container'>
                 <form onSubmit={onSubmits}>
                     <h1>Hello {fullName.fname} {fullName.lname}</h1>
+                    <p>{fullName.email} {fullName.number}</p>
 
                     <input 
                         type='text' 
@@ -59,6 +82,22 @@ const App = () => {
                         name='lname'
                         onChange={inputEvent}
                         value={fullName.lname}
+                    />
+
+                    <input 
+                        type='email' 
+                        placeholder='Enter Your Email' 
+                        name='email'
+                        onChange={inputEvent}
+                        value={fullName.email}
+                    />
+
+                    <input 
+                        type='number' 
+                        placeholder='Enter Your Phone Number' 
+                        name='number'
+                        onChange={inputEvent}
+                        value={fullName.number}
                     />
 
                     <button type='submit'>Submit</button>

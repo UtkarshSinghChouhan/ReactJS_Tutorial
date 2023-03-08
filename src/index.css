@@ -36,15 +36,19 @@ form{
 }
 
 h1{    
-    font-size: 96px;
+    font-size: 50px;
     text-shadow: 5px 5px 8px rgba(0, 0, 0, 0.54);
     /* margin: 0 0 20px 0; */
     color: #fff;
 }
 
+p{
+    font-weight: bold;
+}
+
 input{
     padding: 20px;
-    margin: 38px 0;
+    margin: 20px 0;
     width: 340px;
     text-align: center;
     font-size: 25px;
