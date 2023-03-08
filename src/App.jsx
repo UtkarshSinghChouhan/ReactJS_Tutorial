@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
 import './index.css';
 
+
+
+
 const App = () => {
 
     let[fullName, setName] = useState({
@@ -11,46 +14,52 @@ const App = () => {
     });
 
     const inputEvent = (e) => {
-        console.log(e.target.value);
-        console.log(e.target.name);
-        console.log(e.target.placeholder);
+        // console.log(e.target.value);
+        // console.log(e.target.name);
+        // console.log(e.target.placeholder);
 
 
         setName((previousValue) => {
-            // let value = e.target.value;
-            // let name = e.target.name;
 
             let{name, value} = e.target;   //object Destructuring
 
-            if(name === 'fname'){
-                return{
-                    fname : value,
-                    lname : previousValue.lname,
-                    email : previousValue.email,
-                    number : previousValue.number
-                }
-            }else if(name === 'lname'){
-                return{
-                    fname : previousValue.fname,
-                    lname : value,
-                    email : previousValue.email,
-                    number : previousValue.number
-                }
-            }else if(name === 'email'){
-                return{
-                    fname : previousValue.fname,
-                    lname : previousValue.lname,
-                    email : value,
-                    number : previousValue.number
-                }
-            }else if(name === 'number'){
-                return{
-                    fname : previousValue.fname,
-                    lname : previousValue.lname,
-                    email : previousValue.email,
-                    number : value
-                }
+            console.log(previousValue)
+
+            return{
+                ...previousValue,
+                [name] : value
             }
+
+            // if(name === 'fname'){
+            //     return{
+            //         fname : value,
+            //         lname : previousValue.lname,
+            //         email : previousValue.email,
+            //         number : previousValue.number
+            //     }
+            // }else if(name === 'lname'){
+            //     return{
+            //         fname : previousValue.fname,
+            //         lname : value,
+            //         email : previousValue.email,
+            //         number : previousValue.number
+            //     }
+            // }else if(name === 'email'){
+            //     return{
+            //         fname : previousValue.fname,
+            //         lname : previousValue.lname,
+            //         email : value,
+            //         number : previousValue.number
+            //     }
+            // }else if(name === 'number'){
+            //     return{
+            //         fname : previousValue.fname,
+            //         lname : previousValue.lname,
+            //         email : previousValue.email,
+            //         number : value
+            //     }
+            // }
+
         })
     }
 
