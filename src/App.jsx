@@ -3,50 +3,62 @@ import './index.css';
 
 const App = () => {
 
-    let[message, updateMessage] = useState("");
-    let[fullMessage, updateFullMessage] = useState("");
-
-    let[lastName, updateLast] = useState("");
-    let[LastN, updateLastName] = useState("");
+    let[fullName, setName] = useState({
+        fname : "",
+        lname : ""
+    });
 
     const inputEvent = (e) => {
-        updateMessage(e.target.value);
-    }
+        console.log(e.target.value);
+        console.log(e.target.name);
+        console.log(e.target.placeholder);
 
-    const inputEventTwo = (e) => {
-        updateLast(e.target.value);
+
+        setName((previousValue) => {
+            let value = e.target.value;
+            let name = e.target.name;
+
+            if(name === 'fname'){
+                return{
+                    fname : value,
+                    lname : previousValue.lname
+                }
+            }else if(name === 'lname'){
+                return{
+                    fname : previousValue.fname,
+                    lname : value
+                }
+            }
+        })
     }
 
 
 
     const onSubmits = (e) => {
         e.preventDefault();  //it will prevent the page from reloading while clicking the submit button
-
-        fullMessage = message;
-        updateFullMessage(fullMessage);
-
-        LastN = lastName;
-        updateLastName(LastN);
+        alert("Form Submitted");
     }
 
     return(
         <>
             <div className='container'>
                 <form onSubmit={onSubmits}>
-                    <h1>Hello {fullMessage} {LastN}</h1>
+                    <h1>Hello {fullName.fname} {fullName.lname}</h1>
 
                     <input 
                         type='text' 
                         placeholder='Enter Your Name' 
+                        name='fname'
                         onChange={inputEvent}
-                        value={message}
+                        value={fullName.fname}
                     />
 
                     <input 
                         type='text' 
                         placeholder='Enter Your Last Name' 
-                        onChange={inputEventTwo}
-                        value={lastName}
+                        name='lname'
+                        onChange={inputEvent}
+                        value={fullName.lname}
                     />
 
                     <button type='submit'>Submit</button>
@@ -57,4 +69,4 @@ const App = () => {
     );
 }
 
-export default App; 
+export default App;  
