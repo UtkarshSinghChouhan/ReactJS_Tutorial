@@ -57,3 +57,10 @@ body{
     border-radius: 5px;
 }
 
+.incre:hover{
+    color: rgb(62, 164, 62);
+}
+
+.decre:hover{
+    color: red;
+}
