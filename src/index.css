@@ -5,62 +5,40 @@
     box-sizing: border-box;
 }
 
-body{
-    background-color:rgb(255, 204, 198);
-}
+.header{
+    background-color: rgb(252, 252, 166);
+    padding: 10px 0 10px 10px;
 
-#root{
     display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: wrap;
-    height: 100vh;
-    width: 100vw;
+    justify-content: flex-start;
 
-}
-
-.container{
-    background-color: rgb(251, 219, 215);
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-    flex-wrap: wrap;
-    height: 380px;
-    width: 356px;
-    box-shadow: 8px 8px 9px rgba(0,0,0, 0.54);
-    border-radius: 9px;
+    box-shadow: 0 0px 37px rgba(0, 0, 0, 0.24);
     
 }
 
-.heading{
-    background-color: rgb(252, 191, 183);
-    width: 100%;
-    padding: 20px;
-    text-align: center;
-    text-shadow: 5px 5px 7px rgba(0,0,0, 0.54);
-    font-size: 57px;
+.header h1{
+    margin: 8px 0 0 13px;
 }
 
-.child{
+.main_note{
+    width: 100vw;
+    height: 230px;
     display: flex;
-    justify-content: space-evenly;
-    width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
 }
 
-.child h1{
-    background-color: rgb(252, 191, 183);
-    padding: 10px;
-    font-size: 30px;
-    cursor: pointer;
-    border-radius: 5px;
+.main_note form{
+    display: flex;
+    flex-direction: column;
+    margin: 20px 0 0 0;
 }
 
-.incre:hover{
-    color: rgb(62, 164, 62);
-}
 
-.decre:hover{
-    color: red;
+.footer{
+    padding: 5px;
+    position: absolute;
+    bottom: 0;
+    left: 46%;
 }
