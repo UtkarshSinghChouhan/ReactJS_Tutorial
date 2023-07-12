@@ -6,7 +6,7 @@ const App = () => {
   let [time, update] = useState(new Date().toLocaleTimeString());
 
   setInterval(() => {
-    update(time);
+    update(new Date().toLocaleTimeString());
   }, 1000);
 
   return(
