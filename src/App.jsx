@@ -14,8 +14,11 @@ function App(){
                 {
                     PropData.map((val) => {
                         return(
-                            <Card imgsrc={val.imgsrc}
-                            title={val.title}/>
+                            <Card 
+                                key={val.id}
+                                imgsrc={val.imgsrc}
+                                title={val.title}
+                            />
                         );
                     })
                 }
