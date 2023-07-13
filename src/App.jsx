@@ -13,8 +13,10 @@ function App(){
                 
                 <Card imgsrc={CardData[0].imgsrc}
                     title={CardData[0].title}/>
+
                 <Card imgsrc={CardData[1].imgsrc}
                     title={CardData[1].title}/>
+                    
                 <Card imgsrc={CardData[2].imgsrc}
                     title={CardData[2].title}/>
 
