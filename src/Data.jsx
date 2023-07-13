@@ -3,8 +3,8 @@
 const Data = [
 
     {
-    imgsrc : "https://i.pinimg.com/564x/ee/66/e0/ee66e08b2583f2495d84454bb47978da.jpg",
-    title : "Stranger Things"
+        imgsrc : "https://i.pinimg.com/564x/ee/66/e0/ee66e08b2583f2495d84454bb47978da.jpg",
+        title : "Stranger Things"
     },
 
     

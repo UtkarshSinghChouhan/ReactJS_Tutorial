@@ -7,26 +7,13 @@ import Data from './Data.jsx';
 const App = () => {
     return(
         <>
-            <Card  
-                imgsrc = {Data[0].imgsrc}
-                title = {Data[0].title}
-            />
-
-      
             
-            <Card  
-                imgsrc = {Data[1].imgsrc}
-                title = {Data[1].title}
-            />
-
-      
-            
-            <Card  
-                imgsrc = {Data[2].imgsrc}
-                title = {Data[2].title}
-            />
-
-      
+            {Data.map((obj) => {
+                <Card 
+                    imrsrc = {obj.imgsrc}
+                    title = {obj.title}
+                />
+            })}
             
             
            
