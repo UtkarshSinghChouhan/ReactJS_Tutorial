@@ -5,18 +5,25 @@ const App = () => {
   const [name1, setName1] = useState("");
   const [fName, setFName] = useState("");
   
-  
-  const handleFirstName = (e) => {
-    setName1(e.target.value);
-  }
-  
+ 
   const [name2, setName2] = useState("");
   const [LName, setLName] = useState("");
 
-  const handleLastName = (e) => {
-    setName2(e.target.value)
-  }
+ 
 
+  // We are using the same event handleer function here for both the input feilds
+  const handleName = (e) => {
+    const name = e.target.name
+
+    console.log(name)
+
+    if(name === 'fname'){
+      setName1(e.target.value)
+    }else{
+      
+      setName2(e.target.value)
+    }
+  }
 
 
   const handleSubmit = (e) => {
@@ -34,15 +41,17 @@ const App = () => {
         <input 
           type="text" 
           placeholder='Enter First Name'
+          name='fname'
           value={name1}
-          onChange={handleFirstName}
-        />
+          onChange={handleName}
+          />
 
         <input 
           type="text" 
           placeholder='Enter Last Name'
+          name='lname'
           value={name2}
-          onChange={handleLastName}
+          onChange={handleName}
         />
 
         <button type='submit'> Submit </button>
