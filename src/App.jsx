@@ -26,8 +26,8 @@ const App = () => {
             console.log(previousValue)
 
             return{
-                ...previousValue,
-                [name] : value
+              ...previousValue,
+              [name] : value
             }
 
             // if(name === 'fname'){
