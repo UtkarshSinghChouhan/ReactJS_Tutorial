@@ -2,47 +2,38 @@ import React,{useState} from 'react'
 
 const App = () => {
 
-  const [name1, setName1] = useState("");
-  const [fName, setFName] = useState("");
-  
- 
-  const [name2, setName2] = useState("");
-  const [LName, setLName] = useState("");
+  const [name, setName] = useState({
+    fname : "",
+    lname : ""
+  });
 
  
 
-  // We are using the same event handleer function here for both the input feilds
+  // We are using the same event handler function here for both the input feilds
   const handleName = (e) => {
     const name = e.target.name
+    const val = e.target.value
+    console.log(name);
 
-    console.log(name)
-
-    if(name === 'fname'){
-      setName1(e.target.value)
-    }else{
-      
-      setName2(e.target.value)
-    }
+    (name === 'fname') ? setName({...name, fname : val}) : setName({...name, lname : val})
+  
   }
 
-
   const handleSubmit = (e) => {
-    e.preventDefault(); 
-    setFName(name1);
-    setLName(name2);
+    e.preventDefault();
   }
 
   return (
     <div className='container'>
 
       <form onSubmit={handleSubmit}>
-        <h1>Hello {fName} {LName}</h1>
+        <h1>Hello {name.fname} {name.lname}</h1>
 
         <input 
           type="text" 
           placeholder='Enter First Name'
           name='fname'
-          value={name1}
+          value={name.fname}
           onChange={handleName}
           />
 
@@ -50,7 +41,7 @@ const App = () => {
           type="text" 
           placeholder='Enter Last Name'
           name='lname'
-          value={name2}
+          value={name.lname}
           onChange={handleName}
         />
 
