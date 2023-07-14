@@ -1,40 +1,36 @@
-import React, { useState } from 'react';
-import './index.css';
+import React, { useState } from 'react'
 
 const App = () => {
+  const  [name, setName] = useState("");
+  const  [res, setRes] = useState("");
 
-    let[message, updateMessage] = useState("");
-    let[fullMessage, updateFullMessage] = useState("");
+  const handleEvent = (e) => {
+    setName(e.target.value);
+  }
 
-    const inputEvent = (e) => {
-        updateMessage(e.target.value);
+  const handleSubmit = (e) => {
+    console.log(name)
+    setRes(name)
+  }
 
-        // console.log(e);
-        // console.log(e.target);
-        // console.log(e.target.value);
-    }
 
-    const onSubmit = () => {
-        fullMessage = message;
-        updateFullMessage(fullMessage);
-    }
+  return (
+    <>
+        <div className='container'>
+            <h1>Hello {res}</h1>
 
-    return(
-        <>
-            <div className='container'>
-                <h1>Hello {fullMessage}</h1>
+            <input 
+                type="text"
+                placeholder='Enter Your Name' 
+                onChange={handleEvent}
+                value= {name}
+            />
 
-                <input 
-                    type='text' 
-                    placeholder='Enter Your Name' 
-                    onChange={inputEvent}
-                    value={message}
-                />
+            <button onClick={handleSubmit}>Click Me</button>
 
-                <button onClick={onSubmit}>Submit</button>
-            </div>
-        </>
-    );
+        </div>
+    </>
+  )
 }
 
-export default App; 
+export default App
