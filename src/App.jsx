@@ -1,35 +1,55 @@
-import React, { useState } from 'react'
+import React,{useState} from 'react'
 
 const App = () => {
-  const  [name, setName] = useState("");
-  const  [res, setRes] = useState("");
 
-  const handleEvent = (e) => {
-    setName(e.target.value);
+  const [name1, setName1] = useState("");
+  const [fName, setFName] = useState("");
+  
+  
+  const handleFirstName = (e) => {
+    setName1(e.target.value);
   }
+  
+  const [name2, setName2] = useState("");
+  const [LName, setLName] = useState("");
+
+  const handleLastName = (e) => {
+    setName2(e.target.value)
+  }
+
+
 
   const handleSubmit = (e) => {
-    console.log(name)
-    setRes(name)
+    e.preventDefault(); 
+    setFName(name1);
+    setLName(name2);
   }
 
-
   return (
-    <>
-        <div className='container'>
-            <h1>Hello {res}</h1>
+    <div className='container'>
 
-            <input 
-                type="text"
-                placeholder='Enter Your Name' 
-                onChange={handleEvent}
-                value= {name}
-            />
+      <form onSubmit={handleSubmit}>
+        <h1>Hello {fName} {LName}</h1>
 
-            <button onClick={handleSubmit}>Click Me</button>
+        <input 
+          type="text" 
+          placeholder='Enter First Name'
+          value={name1}
+          onChange={handleFirstName}
+        />
 
-        </div>
-    </>
+        <input 
+          type="text" 
+          placeholder='Enter Last Name'
+          value={name2}
+          onChange={handleLastName}
+        />
+
+        <button type='submit'> Submit </button>
+
+      </form>
+
+    </div>
   )
 }
 
