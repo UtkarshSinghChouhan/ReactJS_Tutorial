@@ -4,7 +4,9 @@ const App = () => {
 
   const [name, setName] = useState({
     fname : "",
-    lname : ""
+    lname : "",
+    email : "",
+    password : ""
   });
 
  
@@ -18,7 +20,12 @@ const App = () => {
     const val = e.target.value
     console.log(e.target);
 
-    setName({...name, [name] : val})
+    setName((pre) => {
+      return{
+        ...pre,
+        [name] : val
+      }
+    })
   
   }
 
@@ -32,6 +39,7 @@ const App = () => {
 
       <form onSubmit={handleSubmit}>
         <h1>Hello {name.fname} {name.lname}</h1>
+        <h4>{name.email} {name.password}</h4>
 
         <input 
           type="text" 
@@ -46,6 +54,22 @@ const App = () => {
           placeholder='Enter Last Name'
           name='lname'
           value={name.lname}
+          onChange={handleName}
+        />
+
+        <input 
+          type="text" 
+          placeholder='Enter Email'
+          name='email'
+          value={name.email}
+          onChange={handleName}
+        />
+
+        <input 
+          type="text" 
+          placeholder='Enter password'
+          name='password'
+          value={name.password}
           onChange={handleName}
         />
 
