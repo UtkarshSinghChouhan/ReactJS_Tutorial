@@ -11,9 +11,12 @@ const App = () => {
 
   // We are using the same event handler function here for both the input feilds
   const handleName = (e) => {
+
+
+
     const name = e.target.name
     const val = e.target.value
-    console.log(name);
+    console.log(e.target);
 
     (name === 'fname') ? setName({...name, fname : val}) : setName({...name, lname : val})
   
