@@ -18,7 +18,7 @@ const App = () => {
     const val = e.target.value
     console.log(e.target);
 
-    (name === 'fname') ? setName({...name, fname : val}) : setName({...name, lname : val})
+    setName({...name, [name] : val})
   
   }
 
