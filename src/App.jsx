@@ -21,6 +21,7 @@ const App = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault();
+    alert("Form Submitted");
   }
 
   return (
@@ -35,7 +36,7 @@ const App = () => {
           name='fname'
           value={name.fname}
           onChange={handleName}
-          />
+        />
 
         <input 
           type="text" 
