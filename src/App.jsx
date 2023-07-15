@@ -8,57 +8,23 @@ const App = () => {
 
     let[fullName, setName] = useState({
         fname : "",
-        lname : "",
         email : "",
-        number : ""
+        comments : ""
     });
 
     const inputEvent = (e) => {
-        // console.log(e.target.value);
-        // console.log(e.target.name);
-        // console.log(e.target.placeholder);
 
 
         setName((previousValue) => {
 
             let{name, value} = e.target;   //object Destructuring
 
-            console.log(previousValue)
+            
 
             return{
               ...previousValue,
               [name] : value
             }
-
-            // if(name === 'fname'){
-            //     return{
-            //         fname : value,
-            //         lname : previousValue.lname,
-            //         email : previousValue.email,
-            //         number : previousValue.number
-            //     }
-            // }else if(name === 'lname'){
-            //     return{
-            //         fname : previousValue.fname,
-            //         lname : value,
-            //         email : previousValue.email,
-            //         number : previousValue.number
-            //     }
-            // }else if(name === 'email'){
-            //     return{
-            //         fname : previousValue.fname,
-            //         lname : previousValue.lname,
-            //         email : value,
-            //         number : previousValue.number
-            //     }
-            // }else if(name === 'number'){
-            //     return{
-            //         fname : previousValue.fname,
-            //         lname : previousValue.lname,
-            //         email : previousValue.email,
-            //         number : value
-            //     }
-            // }
 
         })
     }
@@ -74,8 +40,8 @@ const App = () => {
         <>
             <div className='container'>
                 <form onSubmit={onSubmits}>
-                    <h1>Hello {fullName.fname} {fullName.lname}</h1>
-                    <p>{fullName.email} {fullName.number}</p>
+                    <h1>Hello {fullName.fname}</h1>
+                    <p>{fullName.email}</p>
 
                     <input 
                         type='text' 
@@ -85,14 +51,7 @@ const App = () => {
                         value={fullName.fname}
                     />
 
-                    <input 
-                        type='text' 
-                        placeholder='Enter Your Last Name' 
-                        name='lname'
-                        onChange={inputEvent}
-                        value={fullName.lname}
-                    />
-
+                    
                     <input 
                         type='email' 
                         placeholder='Enter Your Email' 
@@ -101,15 +60,15 @@ const App = () => {
                         value={fullName.email}
                     />
 
-                    <input 
-                        type='number' 
-                        placeholder='Enter Your Phone Number' 
-                        name='number'
-                        onChange={inputEvent}
-                        value={fullName.number}
+
+                    <textarea
+                      name='comments' 
+                      placeholder='Comments...'
+                      onChange={inputEvent}
+                      value={fullName.comments}
                     />
 
-                    <button type='submit'>Submit</button>
+                    <button>Submit</button>
 
                 </form>
             </div>
