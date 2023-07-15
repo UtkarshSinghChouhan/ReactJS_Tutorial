@@ -9,7 +9,8 @@ const App = () => {
     let[fullName, setName] = useState({
         fname : "",
         email : "",
-        comments : ""
+        comments : "",
+        checkbox : false
     });
 
     const inputEvent = (e) => {
@@ -17,13 +18,13 @@ const App = () => {
 
         setName((previousValue) => {
 
-            let{name, value} = e.target;   //object Destructuring
+            let{name, value, type, checked} = e.target;   //object Destructuring
 
             
 
             return{
               ...previousValue,
-              [name] : value
+              [name] : (type === 'checkbox') ? checked : value
             }
 
         })
@@ -67,6 +68,19 @@ const App = () => {
                       onChange={inputEvent}
                       value={fullName.comments}
                     />
+
+                    <div className="signUp">
+                      <input
+                        id='choose'
+                        name='checkbox'
+                        type="checkbox" 
+                        onChange={inputEvent}
+                        checked={fullName.checkbox}
+                      />
+                      <label for='choose'> Sign Up for NewsLetters</label>
+
+                    </div>
+
 
                     <button>Submit</button>
 

@@ -68,4 +68,19 @@ button:hover{
     box-shadow: 8px 8px 10px rgba(0, 0, 0, 0.54);
 }
 
+.signUp{
+    display: inline-flex;
+    width: 197px;
+    margin-top: 15px;
+}
+
+.signUp input{
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-right: 7px;
+    width: 15px;
+    height: 15px;
+
+}
+
 
