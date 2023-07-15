@@ -39,7 +39,7 @@ const App = () => {
 
       <form onSubmit={handleSubmit}>
         <h1>Hello {name.fname} {name.lname}</h1>
-        <h4>{name.email} {name.password}</h4>
+        <h4> {name.email} {name.password}</h4>
 
         <input 
           type="text" 
