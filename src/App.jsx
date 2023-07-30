@@ -8,6 +8,12 @@ const App = () => {
 
     let date = new Date().toDateString();
 
+    
+    //setInterval() is not a part of the React-ecosystem hence it causes infinite rendering
+    // To avoid infinite rendering we use useEffect() hook ---[Topic of further discussion]
+    console.log("rendered")
+
+    
     setInterval(() => {
         setTime(new Date().toLocaleTimeString());
     }, 1000);
