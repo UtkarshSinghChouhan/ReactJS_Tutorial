@@ -5,7 +5,7 @@ const App = () => {
 
   useEffect(() => {
     document.title = `Clicked ${num} times`;
-  });
+  },[num]);
 
   return (
     <>
