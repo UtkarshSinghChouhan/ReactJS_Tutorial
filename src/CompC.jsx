@@ -1,18 +1,14 @@
-import React, { useContext } from "react";
-import { FirstName, LastName } from "./App";
+import React, {useContext}from 'react'
+import {fname, lname} from "./App";
 
 const CompC = () => {
-  const fName = useContext(FirstName);
-  const lName = useContext(LastName);
+
+  const f = useContext(fname);
+  const l = useContext(lname);
 
   return (
-    <>
-      {/* <h1>{`${fName} ${lName}`}</h1> */}
-      <h1>
-        {fName} {lName}
-      </h1>
-    </>
-  );
-};
+    <div>{f} "+" {l}</div>
+  )
+}
 
-export default CompC;
+export default CompC

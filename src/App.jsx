@@ -1,20 +1,20 @@
-import React, { createContext, useContext } from "react";
+import React, { createContext } from "react";
 import CompA from "./CompA";
 
-const FirstName = createContext();
-const LastName = createContext();
+const fname = createContext();
+const lname = createContext();
 
 const App = () => {
   return (
     <>
-      <FirstName.Provider value="Utkarsh">
-        <LastName.Provider value="Chouhan">
+      <fname.Provider value="Utkarsh">
+        <lname.Provider value="Chouhan">
           <CompA />
-        </LastName.Provider>
-      </FirstName.Provider>
+        </lname.Provider>
+      </fname.Provider>
     </>
   );
 };
 
 export default App;
-export { FirstName, LastName };
+export { fname, lname };
