@@ -1,20 +1,52 @@
-import React, { useEffect, useState } from "react";
+import React, {useReducer} from "react";
 
 const App = () => {
-  let [num, setNum] = useState(0);
+  // let [num, setNum] = useState(0);
 
-  useEffect(() => {
-    document.title = `Clicked ${num} times`;
-  },[num]);
+  const initialState = 0;
+  const reducer = (currState, action) =>{
 
+   
+
+    switch(action){
+      case "incre":
+        currState += 1;
+        break;
+
+      case "decre":
+        currState -= 1;
+        break;
+
+      default:
+        break;
+    }
+    return currState;
+
+  }
+
+  const [state, dispatch] = useReducer(reducer, initialState);
+
+
+  
   return (
     <>
+
+      <h1>{state}</h1>
+
       <button
         onClick={() => {
-          setNum(num + 1);
+          dispatch("incre");
+        }}
+        >
+       "➕"
+      </button>
+
+      <button
+        onClick={() => {
+          dispatch("decre");
         }}
       >
-        Clicked {num} times
+       "➖"
       </button>
     </>
   );
