@@ -1,23 +1,24 @@
-import React, { useEffect, useState } from "react";
+import React from 'react'
+
+import {Route, Routes} from "react-router-dom";
+
+import About from "./About";
+import Contact from "./Contact";
+import Instagram from "./Instagram";
+import Error from "./Error"
 
 const App = () => {
-  let [num, setNum] = useState(0);
-
-  useEffect(() => {
-    document.title = `Clicked ${num} times`;
-  },[num]);
-
   return (
     <>
-      <button
-        onClick={() => {
-          setNum(num + 1);
-        }}
-      >
-        Clicked {num} times
-      </button>
+      <Routes>
+        <Route path='/about' element={<About />} />
+        <Route path='/contact' element={<Contact />} />
+        <Route path='/contact/instagram' element={<Instagram />} />
+        <Route  path='*' element={<Error />}/>
+      </Routes>
+      
     </>
-  );
-};
+  )
+}
 
-export default App;
+export default App
