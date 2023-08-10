@@ -8,12 +8,12 @@ import About from "./About";
 import Contact from "./Contact";
 import Instagram from "./Instagram";
 import Error from "./Error"
-import Menu from "./Menu"
+import Header from "./Header"
 
 const App = () => {
   return (
     <>
-      <Menu />
+      <Header />
 
       <Routes>
         <Route path='/about' element={<About />} />
